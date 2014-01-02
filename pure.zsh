@@ -74,10 +74,6 @@ prompt_pure_precmd() {
 
 
 prompt_pure_setup() {
-	# prevent percentage showing up
-	# if output doesn't end with a newline
-	export PROMPT_EOL_MARK=''
-
 	prompt_opts=(cr subst percent)
 
 	autoload -Uz add-zsh-hook
