@@ -65,7 +65,7 @@ _pure_precmd() {
 	# git info
 	vcs_info
 
-	local prompt_pure_preprompt="\n%F{blue}%~%F{242}$vcs_info_msg_0_`_pure_git_dirty` $prompt_pure_username%f %F{yellow}`_pure_cmd_exec_time`%f"
+	local prompt_pure_preprompt="\n%F{blue}%~%F{242}${vcs_info_msg_0_}$(_pure_git_dirty) ${prompt_pure_username}%f %F{yellow}$(_pure_cmd_exec_time)%f"
 	print -P $prompt_pure_preprompt
 
 	# reset value since `preexec` isn't always triggered
