@@ -73,7 +73,7 @@ prompt_pure_precmd() {
 }
 
 
-prompt_pure_setup() {
+() {
 	prompt_opts=(cr subst percent)
 
 	zmodload zsh/datetime
@@ -93,5 +93,3 @@ prompt_pure_setup() {
 	# prompt turns red if the previous command didn't exit with 0
 	PROMPT='%(?.%F{magenta}.%F{red})❯%f '
 }
-
-prompt_pure_setup "$@"
