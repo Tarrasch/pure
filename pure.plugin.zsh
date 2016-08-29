@@ -65,7 +65,7 @@ _pure_precmd() {
 	# git info
 	vcs_info
 
-	local prompt_pure_preprompt="\n%F{blue}%~%F{242}${vcs_info_msg_0_}$(_pure_git_dirty) ${prompt_pure_username}%f %F{yellow}$(_pure_cmd_exec_time)%f"
+	local prompt_pure_preprompt="\n%F{blue}%~%F{242}${vcs_info_msg_0_}$(_pure_git_dirty) ${_pure_username}%f %F{yellow}$(_pure_cmd_exec_time)%f"
 	print -P $prompt_pure_preprompt
 
 	# reset value since `preexec` isn't always triggered
@@ -88,7 +88,7 @@ _pure_precmd() {
 	zstyle ':vcs_info:git*' actionformats ' %b|%a'
 
 	# show username@host if logged in through SSH
-	[[ "$SSH_CONNECTION" != '' ]] && prompt_pure_username='%n@%m '
+	[[ "$SSH_CONNECTION" != '' ]] && _pure_username='%n@%m '
 
 	# prompt turns red if the previous command didn't exit with 0
 	PROMPT='%(?.%F{magenta}.%F{red})❯%f '
